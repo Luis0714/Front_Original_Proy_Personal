@@ -9,7 +9,7 @@ import { SengEmailComponent } from './components/pages/seng-email/seng-email.com
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/send-email',
+    redirectTo:'/home',
     pathMatch:'full'
   },
   {
