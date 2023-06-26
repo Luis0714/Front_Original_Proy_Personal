@@ -4,7 +4,11 @@ import { HomeComponent } from './components/Pages/home/home.component';
 import { LoginComponent } from './components/Pages/login/login.component';
 import { RegisterComponent } from './components/Pages/register/register.component';
 import { ChangePasswordComponent } from './components/Pages/change-password/change-password.component';
+import { MenuDesktopComponent } from './components/modals/menu-desktop/menu-desktop.component';
 import { SengEmailComponent } from './components/pages/seng-email/seng-email.component';
+import { MenuMobileComponent } from './components/modals/menu-mobile/menu-mobile.component';
+import { ButtonAceptarComponent } from './components/general/button-aceptar/button-aceptar.component';
+import { ButtonPrimaryComponent } from './components/general/button-primary/button-primary.component';
 
 const routes: Routes = [
   {
@@ -31,7 +35,24 @@ const routes: Routes = [
   {
     path:'send-email',
     component: SengEmailComponent
+  },
+  {
+    path:'menu-desktop',
+    component: MenuDesktopComponent
+  },
+  {
+    path:'menu-mobile',
+    component: MenuMobileComponent
+  },
+  {
+    path:'button-aceptar',
+    component: ButtonAceptarComponent
+  },
+  {
+    path:'button-primary',
+    component: ButtonPrimaryComponent
   }
+
 ];
 
 @NgModule({

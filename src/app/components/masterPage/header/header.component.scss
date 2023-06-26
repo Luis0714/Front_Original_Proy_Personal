@@ -68,6 +68,11 @@ nav{
   font-size: $sm;
   margin-right: 12px;
 }
+.icono{
+  margin-left: 5px;
+  font-weight: bold;
+  color: $holpital-green;
+}
 .navbar-image-user{
   position: relative;
 }
@@ -83,6 +88,12 @@ nav{
   right: -3px;
   justify-content: center;
   align-items: center;
+}
+
+.navbar-email img{
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
 }
 
 @media (max-width: 640px){

@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpInterceptor } from '@angular/common/http';
-
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+import {CdkMenu, CdkMenuItem, CdkMenuTrigger} from '@angular/cdk/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/masterPage/header/header.component';
 import { FooterComponent } from './components/masterPage/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TimeResponseInterceptor } from './interceptors/time-response.interceptor';
 import { TokenInterceptor } from './interceptors/Token/token.interceptor';
 import { HomeComponent } from './components/Pages/home/home.component';
@@ -17,7 +20,10 @@ import { RegisterComponent } from './components/Pages/register/register.componen
 import { ResetPasswordComponent } from './components/Pages/reset-password/reset-password.component';
 import { ChangePasswordComponent } from './components/Pages/change-password/change-password.component';
 import { SengEmailComponent } from './components/pages/seng-email/seng-email.component';
-
+import { MenuDesktopComponent } from './components/modals/menu-desktop/menu-desktop.component';
+import { MenuMobileComponent } from './components/modals/menu-mobile/menu-mobile.component';
+import { ButtonAceptarComponent } from './components/general/button-aceptar/button-aceptar.component';
+import { ButtonPrimaryComponent } from './components/general/button-primary/button-primary.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +38,22 @@ import { SengEmailComponent } from './components/pages/seng-email/seng-email.com
     ResetPasswordComponent,
     ChangePasswordComponent,
     SengEmailComponent,
+    MenuDesktopComponent,
+    MenuMobileComponent,
+    ButtonAceptarComponent,
+    ButtonPrimaryComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    CdkAccordionModule,
+    CdkMenuTrigger,
+    CdkMenu,
+    CdkMenuItem,
+    MatSidenavModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TimeResponseInterceptor, multi:true},

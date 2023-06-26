@@ -6,7 +6,7 @@
 
 <body>
   <nav>
-    <img class="menu" src="../../../../assets/icons/icon_menu.svg" alt="">
+    <img class="menu" routerLink="/menu-mobile" src="../../../../assets/icons/icon_menu.svg" alt="">
 
     <div class="navbar-left">
       <img class="logo" src="../../../../assets/LogoSinFondo.png" alt="logo">
@@ -22,15 +22,24 @@
         </li>
       </ul>
     </div>
+    <cdk-accordion>
+      <cdk-accordion-item #accordionMenu="cdkAccordionItem">
+        <div class="navbar-right">
+          <ul>
+            <li (click)="accordionMenu.toggle()" class="navbar-email">
+              luisandres@gmail.com
+              <fa-icon class="icono" [icon]="accordionMenu.expanded ? faAngleUp : faAngleDown"></fa-icon>
+            </li>
+            <li class="navbar-image-user">
+              <img src="../../../../assets/usuario.jpg" alt="imagen usuario">
+              <div></div>
+            </li>
+          </ul>
+        </div>
+        <app-menu-desktop [style.display]="accordionMenu.expanded ? '':'none'"></app-menu-desktop>
 
-    <div class="navbar-right">
-      <ul>
-        <li class="navbar-email">luisandres@gmail.com</li>
-        <li class="navbar-image-user">
-          <img src="../../../../assets/usuario.jpg" alt="imagen usuario">
-          <div></div>
-        </li>
-      </ul>
-    </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
+
   </nav>
 </body>
