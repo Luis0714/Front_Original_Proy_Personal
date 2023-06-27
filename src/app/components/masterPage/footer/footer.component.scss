@@ -6,12 +6,19 @@ $holpital-green: #9ae07d;
 $sm: 14px;
 $md:16px;
 $lg:0px;
+$maron-oscuro: #483849;
+$maron-oscuro2: #644858;
+$maron-oscuro3: #8f6470;
+$maron-claro2: #cb8f90;
+$maron-claro: #ffcbb8;
+$backgroud: #e7efe6;
+$purpu: #d1aed0;
 
 .footer {
-  background-color:white;
+  background-color: $backgroud;
   border-block: 1px solid $Very-light-pink;
   text-align: center;
-  position: fixed;
+  position: initial;
   bottom: 0;
   width: 100%;
 }
@@ -23,7 +30,7 @@ $lg:0px;
 }
 
 .footer-text {
-  color: $Very-light-pink;
+  color: $purpu;
   font-weight: bold;
   font-size: $md;
   margin: 10px;

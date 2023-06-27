@@ -9,11 +9,13 @@ import { SengEmailComponent } from './components/pages/seng-email/seng-email.com
 import { MenuMobileComponent } from './components/modals/menu-mobile/menu-mobile.component';
 import { ButtonAceptarComponent } from './components/general/button-aceptar/button-aceptar.component';
 import { ButtonPrimaryComponent } from './components/general/button-primary/button-primary.component';
+import { LoaderComponent } from './components/general/loader/loader.component';
+import { UsersComponent } from './components/pages/users/users.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/home',
+    redirectTo:'/register',
     pathMatch:'full'
   },
   {
@@ -51,6 +53,14 @@ const routes: Routes = [
   {
     path:'button-primary',
     component: ButtonPrimaryComponent
+  },
+  {
+    path:'loader',
+    component: LoaderComponent
+  },
+  {
+    path:'users',
+    component: UsersComponent
   }
 
 ];

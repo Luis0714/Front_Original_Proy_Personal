@@ -5,10 +5,13 @@
 </head>
 
 <body>
-  <nav>
-    <img class="menu" routerLink="/menu-mobile" src="../../../../assets/icons/icon_menu.svg" alt="">
+  <nav class="menu-desktop">
+    <div (click)="toggleMenu()">
+      <fa-icon class="menu" [icon]="faBars"></fa-icon>
+    </div>
 
     <div class="navbar-left">
+      <app-menu-mobile [handleClose]="toggleMenu" [showMenu]="isMenuOpen"></app-menu-mobile>
       <img class="logo" src="../../../../assets/LogoSinFondo.png" alt="logo">
       <ul>
         <li>
@@ -31,15 +34,12 @@
               <fa-icon class="icono" [icon]="accordionMenu.expanded ? faAngleUp : faAngleDown"></fa-icon>
             </li>
             <li class="navbar-image-user">
-              <img src="../../../../assets/usuario.jpg" alt="imagen usuario">
-              <div></div>
+              <img  src="../../../../assets/usuario.jpg" alt="imagen usuario">
             </li>
           </ul>
         </div>
         <app-menu-desktop [style.display]="accordionMenu.expanded ? '':'none'"></app-menu-desktop>
-
       </cdk-accordion-item>
     </cdk-accordion>
-
   </nav>
 </body>

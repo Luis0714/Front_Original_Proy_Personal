@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import { Component, Input } from '@angular/core';
+import { faRightFromBracket, faEnvelope, faXmark,faUsers,faPhone, faUserSecret} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu-mobile',
@@ -8,4 +8,17 @@ import { faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
 })
 export class MenuMobileComponent {
   faRightFromBracket = faRightFromBracket;
+  faUsers = faUsers;
+  faPhone = faPhone;
+  faUserSecret = faUserSecret;
+  faEnvelope = faEnvelope;
+  faXmark = faXmark;
+  @Input() showMenu: boolean = false;
+  @Input() handleClose: (() => void) | undefined;
+
+  closeMenu(){
+    this.showMenu = !this.showMenu;
+  }
 }
+
+

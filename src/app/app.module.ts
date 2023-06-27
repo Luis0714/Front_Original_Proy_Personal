@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpInterceptor } from '@angular/common/http';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
@@ -24,7 +25,10 @@ import { MenuDesktopComponent } from './components/modals/menu-desktop/menu-desk
 import { MenuMobileComponent } from './components/modals/menu-mobile/menu-mobile.component';
 import { ButtonAceptarComponent } from './components/general/button-aceptar/button-aceptar.component';
 import { ButtonPrimaryComponent } from './components/general/button-primary/button-primary.component';
-
+import { LoaderComponent } from './components/general/loader/loader.component';
+import { HomeSingOutComponent } from './components/pages/home-sing-out/home-sing-out.component';
+import { UsersComponent } from './components/pages/users/users.component';
+yimport { API_ROUTES } from 'src/apis-routes';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,10 +46,14 @@ import { ButtonPrimaryComponent } from './components/general/button-primary/butt
     MenuMobileComponent,
     ButtonAceptarComponent,
     ButtonPrimaryComponent,
+    LoaderComponent,
+    HomeSingOutComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
@@ -53,7 +61,10 @@ import { ButtonPrimaryComponent } from './components/general/button-primary/butt
     CdkMenuTrigger,
     CdkMenu,
     CdkMenuItem,
-    MatSidenavModule
+    MatSidenavModule,
+    AngularFireModule.initializeApp(API_ROUTES.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TimeResponseInterceptor, multi:true},
